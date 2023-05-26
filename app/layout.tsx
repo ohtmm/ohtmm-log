@@ -14,9 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='ko'>
-      <body className='bg-white'>
+      <body className='bg-white min-h-screen'>
         <Navbar />
-        <ProfilePic />
         {children}
       </body>
     </html>
