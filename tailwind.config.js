@@ -8,8 +8,8 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '480px',
-      md: '768px',
+      // sm: { max: '480px' },
+      md: { max: '768px' },
       lg: '976px',
       xl: '1440px',
     },
@@ -22,6 +22,7 @@ module.exports = {
       gray: '#8492a6',
       'gray-light': '#d3dce6',
       black: '#222',
+      white: '#fff',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

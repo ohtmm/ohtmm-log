@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 
 export default function Navbar() {
   return (
-    <nav className="p-4 sticky top-0 drop-shadow-xl z-10">
+    <nav className="w-full p-4 sticky top-0 bg-white z-10">
       <div className="h-fit mx-auto flex justify-between items-center">
         <h1 className="text-3xl">
           <Link href="/" className="text-black font-bold no-underline hover:text-primary">
