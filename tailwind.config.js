@@ -14,13 +14,14 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
-      blue: '#1fb6ff',
+      primary: '#1fb6ff',
       pink: '#ff49db',
-      orange: '#ff7849',
+      red: '#ff7849',
       lightPink: '#FDF2F8',
       'gray-dark': '#273444',
       gray: '#8492a6',
       'gray-light': '#d3dce6',
+      black: '#222',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
