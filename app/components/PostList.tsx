@@ -1,12 +1,12 @@
-import Post from './Post';
+import PostItem from './PostItem';
 
 const PostList = () => {
   return (
     <div className="w-full">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      <PostItem />
+      <PostItem />
+      <PostItem />
+      <PostItem />
     </div>
   );
 };
