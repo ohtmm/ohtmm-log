@@ -5,3 +5,8 @@ interface IPost {
   tag: string[];
   [key: string]: string | string[];
 }
+
+interface ITag {
+  id: string;
+  name: string;
+}

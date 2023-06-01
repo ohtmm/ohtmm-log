@@ -3,16 +3,14 @@ import Title from './components/Title';
 
 type Params = {
   params: {
-    postId: string;
+    id: string;
   };
 };
 
-const Post = async () => {
-
+const Post = async ({ params: { id } }: Params) => {
   return (
     <div>
       <Title />
-      {/* <Content /> */}
     </div>
   );
 };

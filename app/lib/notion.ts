@@ -21,7 +21,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
         break;
       }
       case 'created_time': {
-        value = propertyVal.created_time.slice(0, 10);
+        value = new Date(propertyVal.created_time).toLocaleDateString();
       }
     }
     res[key] = value;
@@ -36,6 +36,32 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
 };
 
 const notionClient = new Client({ auth: process.env.NOTION_API_KEY });
+
+export const getDatabaseTags = async () => {
+  try {
+    const databaseData = await notionClient.databases.retrieve({
+      database_id: notionIssuesDatabase,
+    });
+
+    const databaseProperties = databaseData.properties;
+
+    let tags: ITag[] = [];
+    Object.keys(databaseProperties).map((key) => {
+      const propertyVal = databaseProperties[key];
+      if (propertyVal.type === 'multi_select') {
+        const tagOptions = propertyVal.multi_select.options;
+        tagOptions.map((option) => {
+          const { color, ...withoutColor } = option;
+          tags.push(withoutColor);
+        });
+      }
+    });
+    return tags;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
 
 export const getPostList = async () => {
   try {
