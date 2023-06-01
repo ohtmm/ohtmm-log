@@ -8,7 +8,7 @@ const Category = async () => {
       {tags?.map((tag) => (
         <li
           key={tag.id}
-          className="text-white bg-primary/60 hover:text-primary/60 hover:bg-white w-fit px-2 text-l text-center rounded-xl cursor-pointer m-4 md:m-2"
+          className="text-white bg-primary/60 hover:text-white hover:bg-primary hover:font-bold w-fit px-2 text-l text-center rounded-xl cursor-pointer m-4 md:m-2"
         >
           <Link href={`/posts/tag?name=${tag.name.toLowerCase()}`}>{tag.name}</Link>
         </li>
