@@ -29,7 +29,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
 
   return {
     id,
-    tags: res.tags || [],
+    tag: res.tag || [],
     title: res.title || '',
     createdAt: res.createdAt || created_time,
   };

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-const PostItem = ({ id, createdAt, title, tags }: IPost) => {
+const PostItem = ({ id, createdAt, title, tag }: IPost) => {
   return (
     <div className="p-8 pl-12 border-b border-primary/20 md:pl-8">
       <h2 className="font-bold text-xl mb-2 hover:text-primary">
@@ -10,9 +10,9 @@ const PostItem = ({ id, createdAt, title, tags }: IPost) => {
       </h2>
       <div className="flex justify-between">
         <div>
-          {tags.map((tag, idx) => (
-            <span className="mr-2  text-gray text-sm font-semibold" key={`${tag}-${idx}`}>
-              {tag}
+          {tag.map((name, idx) => (
+            <span className="mr-2  text-gray text-sm font-semibold" key={`${name}-${idx}`}>
+              {name}
             </span>
           ))}
         </div>

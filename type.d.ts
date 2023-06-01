@@ -2,6 +2,6 @@ interface IPost {
   id: string;
   title: string;
   createdAt: string;
-  tags: string[];
+  tag: string[];
   [key: string]: string | string[];
 }
