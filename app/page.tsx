@@ -9,6 +9,7 @@ export default function Home() {
         <Profile />
         <div className="p-8 rounded-xl flex gap-8 md:block md:p-4 md:mt-8">
           <Organization />
+          {/* @ts-expect-error Async Server Component */}
           <PostList />
         </div>
       </div>

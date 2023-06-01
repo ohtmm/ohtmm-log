@@ -1,11 +1,18 @@
 import Content from './components/Content';
 import Title from './components/Title';
 
-const Post = () => {
+type Params = {
+  params: {
+    postId: string;
+  };
+};
+
+const Post = async () => {
+
   return (
     <div>
       <Title />
-      <Content />
+      {/* <Content /> */}
     </div>
   );
 };
