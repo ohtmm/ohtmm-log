@@ -1,7 +1,9 @@
 import { Client } from '@notionhq/client';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { NotionAPI } from 'notion-client';
 
 const notionIssuesDatabase = 'aded321e5162420e88ed00aea8ab45e5';
+const notionAPI = new NotionAPI();
 
 const convertPageProperties = (page: PageObjectResponse): IPost => {
   const { id, created_time, properties } = page;
@@ -74,4 +76,9 @@ export const getPostList = async () => {
   });
 
   return pages;
+};
+
+export const getPostDetail = async (pageID: string) => {
+  const recordMap = await notionAPI.getPage(pageID);
+  return recordMap;
 };

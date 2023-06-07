@@ -9,10 +9,8 @@ export default function Home() {
       <div className="mt-8">
         <Profile />
         <div className="p-8 rounded-xl flex gap-8 md:block md:p-4 md:mt-8">
-          {/* @ts-expect-error async server component */}
           <Organization />
           <Suspense fallback={<div className="w-full text-center">Loading Posts..</div>}>
-            {/* @ts-expect-error async server component */}
             <PostList />
           </Suspense>
         </div>

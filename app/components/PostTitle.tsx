@@ -10,7 +10,7 @@ const PostTitle = ({ post: { id, createdAt, title, tag }, isDetailPage }: PostIt
     <div
       className={`${
         isDetailPage
-          ? 'border-b border-primary/20 p-8 bg-black text-white rounded-xl'
+          ? 'border-b border-primary/20 p-8 mb-8 bg-black text-white rounded-xl'
           : 'p-8 pl-12 border-b border-primary/20 md:pl-8'
       }`}
     >

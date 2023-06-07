@@ -1,7 +1,11 @@
+import './globals.css';
+import 'react-notion-x/src/styles.css';
+import 'prismjs/themes/prism-tomorrow.css';
+
+import { Montserrat, Noto_Sans_KR } from 'next/font/google';
+
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import './globals.css';
-import { Montserrat, Noto_Sans_KR } from 'next/font/google';
 
 export const metadata = {
   title: 'ohtmm.log',

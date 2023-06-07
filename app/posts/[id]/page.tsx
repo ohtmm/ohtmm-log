@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import Content from './components/Content';
-import { getPostList } from '@/app/lib/notion';
+import { getPostDetail, getPostList } from '@/app/lib/notion';
 import PostTitle from '@/app/components/PostTitle';
+import NotionContent from './components/Content';
 
 type Params = {
   params: {
@@ -10,18 +10,23 @@ type Params = {
 };
 
 export async function generateMetadata({ params: { id } }: Params): Promise<Metadata> {
+  const pages = await getPostList();
+  const currentPage = pages.find((page) => page.id === id)!;
   return {
-    title: id,
-    description: '샘플 아이디',
+    title: currentPage.title,
+    description: currentPage.createdAt,
   };
 }
 
 async function Post({ params: { id } }: Params) {
   const pages = await getPostList();
+  const recordMap = await getPostDetail(id);
+
   const currentPage = pages.find((page) => page.id === id)!;
   return (
     <div>
       <PostTitle post={currentPage} isDetailPage />
+      <NotionContent recordMap={recordMap} />
     </div>
   );
 }
