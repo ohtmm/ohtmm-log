@@ -1,14 +1,16 @@
-import PostItem from './PostItem';
+import { getPostList } from '../lib/notion';
+import PostTitle from './PostTitle';
 
-const PostList = () => {
+async function PostList() {
+  const pages = await getPostList();
+
   return (
     <div className="w-full">
-      <PostItem />
-      <PostItem />
-      <PostItem />
-      <PostItem />
+      {pages?.map((page) => (
+        <PostTitle key={page.id} post={page} />
+      ))}
     </div>
   );
-};
+}
 
 export default PostList;

@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Organization from './components/Organization';
 import PostList from './components/PostList';
 import Profile from './components/Profile';
@@ -8,8 +9,12 @@ export default function Home() {
       <div className="mt-8">
         <Profile />
         <div className="p-8 rounded-xl flex gap-8 md:block md:p-4 md:mt-8">
+          {/* @ts-expect-error async server component */}
           <Organization />
-          <PostList />
+          <Suspense fallback={<div className="w-full text-center">Loading Posts..</div>}>
+            {/* @ts-expect-error async server component */}
+            <PostList />
+          </Suspense>
         </div>
       </div>
     </main>
