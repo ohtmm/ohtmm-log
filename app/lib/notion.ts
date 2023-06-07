@@ -37,7 +37,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
   };
 };
 
-const notionClient = new Client({ auth: process.env.NOTION_API_KEY });
+const notionClient = new Client({ auth: process.env.NEXT_PUBLIC_NOTION_API_KEY });
 
 export const getDatabaseTags = async () => {
   try {
