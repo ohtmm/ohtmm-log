@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -6,11 +7,34 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      // sm: { max: '480px' },
+      md: { max: '768px' },
+      lg: '976px',
+      xl: '1440px',
+    },
+    colors: {
+      primary: '#1fb6ff',
+      pink: '#ff49db',
+      red: '#ff7849',
+      lightPink: '#FDF2F8',
+      'gray-dark': '#273444',
+      gray: '#8492a6',
+      'gray-light': '#d3dce6',
+      black: '#222',
+      white: '#fff',
+    },
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      spacing: {
+        128: '32rem',
+        144: '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
       },
     },
   },
