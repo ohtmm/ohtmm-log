@@ -1,5 +1,5 @@
 import { getPostList } from '../lib/notion';
-import PostItem from './PostItem';
+import PostTitle from './PostTitle';
 
 async function PostList() {
   const pages = await getPostList();
@@ -7,7 +7,7 @@ async function PostList() {
   return (
     <div className="w-full">
       {pages?.map((page) => (
-        <PostItem key={page.id} {...page} />
+        <PostTitle key={page.id} post={page} />
       ))}
     </div>
   );

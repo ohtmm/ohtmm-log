@@ -64,19 +64,14 @@ export const getDatabaseTags = async () => {
 };
 
 export const getPostList = async () => {
-  try {
-    const databaseQuery = await notionClient.databases.query({
-      database_id: notionIssuesDatabase,
-    });
+  const databaseQuery = await notionClient.databases.query({
+    database_id: notionIssuesDatabase,
+  });
 
-    const pages: IPost[] = databaseQuery.results.map((pageData) => {
-      const page = pageData as PageObjectResponse;
-      return convertPageProperties(page);
-    });
+  const pages: IPost[] = databaseQuery.results.map((pageData) => {
+    const page = pageData as PageObjectResponse;
+    return convertPageProperties(page);
+  });
 
-    return pages;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
+  return pages;
 };

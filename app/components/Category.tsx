@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getDatabaseTags } from '../lib/notion';
 
-const Category = async () => {
+async function Category() {
   const tags = await getDatabaseTags();
   return (
     <ul className="md:pr-0 md:w-full md:flex md:flex-wrap md:pb-0">
@@ -15,6 +15,6 @@ const Category = async () => {
       ))}
     </ul>
   );
-};
+}
 
 export default Category;
