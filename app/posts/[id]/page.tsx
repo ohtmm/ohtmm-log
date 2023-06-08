@@ -3,6 +3,8 @@ import { getPostDetail, getPostList } from '@/app/lib/notion';
 import PostTitle from '@/app/components/PostTitle';
 import NotionContent from './components/Content';
 
+export const revalidate = 60 * 5;
+
 type Params = {
   params: {
     id: string;
