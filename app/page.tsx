@@ -3,6 +3,8 @@ import Organization from './components/Organization';
 import PostList from './components/PostList';
 import Profile from './components/Profile';
 
+export const revalidate = 60 * 5;
+
 export default function Home() {
   return (
     <main className="px-6 mx-auto min-h-screen">
