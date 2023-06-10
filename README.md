@@ -5,4 +5,5 @@
 
 https://ohtmm-log.vercel.app/
 
-<img width="1245" alt="스크린샷 2023-06-07 오후 9 51 33" src="https://github.com/ohtmm/ohtmm-log/assets/108715216/55e78410-4186-42ce-8aa8-7f46dc018428">
+
+<img width="1245" alt="스크린샷 2023-06-10 오전 11 21 05" src="https://github.com/ohtmm/ohtmm-log/assets/108715216/c1940087-c859-4020-a0ea-a26ee7791919">
