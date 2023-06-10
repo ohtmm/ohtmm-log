@@ -23,6 +23,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
       }
       case 'created_time': {
         value = new Date(propertyVal.created_time).toLocaleDateString();
+        break;
       }
     }
     res[key] = value;
