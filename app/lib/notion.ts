@@ -9,8 +9,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
   const { id, created_time, properties } = page;
   const res: Partial<IPost> = {};
 
-  Object.keys(properties).forEach((key) => {
-    const propertyVal = properties[key];
+  Object.entries(properties).forEach(([key, propertyVal]) => {
     let value: string | string[] = '';
 
     switch (propertyVal.type) {
@@ -24,6 +23,7 @@ const convertPageProperties = (page: PageObjectResponse): IPost => {
       }
       case 'created_time': {
         value = new Date(propertyVal.created_time).toLocaleDateString();
+        break;
       }
     }
     res[key] = value;
@@ -48,13 +48,12 @@ export const getDatabaseTags = async () => {
     const databaseProperties = databaseData.properties;
 
     let tags: ITag[] = [];
-    Object.keys(databaseProperties).map((key) => {
-      const propertyVal = databaseProperties[key];
+    Object.values(databaseProperties).forEach((propertyVal) => {
       if (propertyVal.type === 'multi_select') {
         const tagOptions = propertyVal.multi_select.options;
-        tagOptions.map((option) => {
-          const { color, ...withoutColor } = option;
-          tags.push(withoutColor);
+        tagOptions.forEach((option) => {
+          const { color, ...propsWithoutColor } = option;
+          tags.push(propsWithoutColor);
         });
       }
     });
